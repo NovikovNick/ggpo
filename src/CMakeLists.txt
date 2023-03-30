@@ -21,7 +21,9 @@ if(WIN32)
 	endif()
 endif()
 
-set_target_properties(GGPO PROPERTIES VERSION ${PROJECT_VERSION})
+set_target_properties(GGPO 
+	PROPERTIES VERSION ${PROJECT_VERSION}
+	MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 # Install
 install(
